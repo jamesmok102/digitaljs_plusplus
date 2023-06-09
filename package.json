@@ -1,0 +1,389 @@
+{
+    "name": "digitaljs",
+    "displayName": "DigitalJS_plusplus",
+    "description": "DigitalJS Plus for VS Code",
+    "version": "1.0.0",
+    "license": "SEE LICENSE IN LICENSE",
+    "publisher": "mok",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jamesmok102/digitaljs_plusplus.git"
+    },
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "icon": "imgs/digitaljs.png",
+    "categories": [
+        "Debuggers",
+        "Education",
+        "Programming Languages",
+        "Visualization",
+        "Other"
+    ],
+    "keywords": [
+        "verilog",
+        "simulation"
+    ],
+    "activationEvents": [
+        "onCustomEditor:digitaljs.circuitView",
+        "onCommand:digitaljs.openView",
+        "onCommand:digitaljs.openViewJSON",
+        "onCommand:digitaljs.addToViewSource",
+        "onCommand:digitaljs.newViewSource",
+        "onCommand:digitaljs.newJSON",
+        "onCommand:digitaljs.addFiles",
+        "onCommand:digitaljs.exportImage",
+        "onCommand:digitaljs.removeSource"
+    ],
+    "main": "./dist/local-extension.js",
+    "browser": "./dist/web-extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "digitaljs.openView",
+                "title": "Open DigitalJS",
+                "icon": "imgs/digitaljs.svg",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.showPanel",
+                "title": "Show DigitalJS Panel",
+                "icon": "imgs/digitaljs.svg",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.openViewJSON",
+                "title": "Open as circuit in DigitalJS",
+                "icon": "imgs/digitaljs.svg",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.addToViewSource",
+                "title": "Add to DigitalJS",
+                "icon": "imgs/digitaljs.svg",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.newViewSource",
+                "title": "Create circuit in DigitalJS",
+                "icon": "imgs/digitaljs.svg",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.revealCircuit",
+                "title": "Show active circuit",
+                "icon": "$(output-view-icon)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.pause",
+                "title": "Pause",
+                "icon": "$(debug-pause)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.start",
+                "title": "Start",
+                "icon": "$(debug-start)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.newJSON",
+                "title": "New Circuit",
+                "icon": "$(new-file)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.addFiles",
+                "title": "Add Files",
+                "icon": "$(add)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.exportImage",
+                "title": "Export Circuit As Image",
+                "icon": "$(file-media)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.showLuaTerminal",
+                "title": "Show Lua Terminal",
+                "icon": "$(terminal)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.removeSource",
+                "title": "Remove",
+                "icon": "$(dash)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.stopScript",
+                "title": "Stop script",
+                "icon": "$(debug-stop)",
+                "category": "DigitalJS"
+            },
+            {
+                "command": "digitaljs.startScript",
+                "title": "Start script",
+                "icon": "$(debug-start)",
+                "category": "DigitalJS"
+            }
+        ],
+        "customEditors": [
+            {
+                "viewType": "digitaljs.circuitView",
+                "displayName": "DigitalJS",
+                "selector": [
+                    {
+                        "filenamePattern": "*.digitaljs"
+                    }
+                ],
+                "priority": "default"
+            },
+            {
+                "viewType": "digitaljs.circuitView_json",
+                "displayName": "DigitalJS",
+                "selector": [
+                    {
+                        "filenamePattern": "*.json"
+                    }
+                ],
+                "priority": "option"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "digitaljs.openView",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.showPanel",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.openViewJSON",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.addToViewSource",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.newViewSource",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.revealCircuit",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.pause",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.start",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.addFiles",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.exportImage",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.showLuaTerminal",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.removeSource",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.stopScript",
+                    "when": "false"
+                },
+                {
+                    "command": "digitaljs.startScript",
+                    "when": "false"
+                }
+            ],
+            "view/title": [
+                {
+                    "command": "digitaljs.newJSON",
+                    "when": "view == digitaljs-proj-files",
+                    "group": "navigation@0"
+                },
+                {
+                    "command": "digitaljs.addFiles",
+                    "when": "view == digitaljs-proj-files",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "digitaljs.exportImage",
+                    "when": "view == digitaljs-proj-files",
+                    "group": "navigation@2"
+                },
+                {
+                    "command": "digitaljs.showLuaTerminal",
+                    "when": "view == digitaljs-proj-files",
+                    "group": "navigation@3"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "digitaljs.openView",
+                    "when": "!digitaljs.view_isfocus",
+                    "group": "navigation"
+                },
+                {
+                    "command": "digitaljs.showPanel",
+                    "when": "digitaljs.view_isfocus",
+                    "group": "navigation@0"
+                },
+                {
+                    "command": "digitaljs.pause",
+                    "when": "digitaljs.view_isfocus && digitaljs.view_hascircuit && digitaljs.view_running",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "digitaljs.start",
+                    "when": "digitaljs.view_isfocus && digitaljs.view_hascircuit && !digitaljs.view_running",
+                    "group": "navigation@1"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "digitaljs.openViewJSON",
+                    "when": "resourceExtname == .json || resourceExtname == .digitaljs",
+                    "group": "navigation@99999"
+                },
+                {
+                    "command": "digitaljs.addToViewSource",
+                    "when": "digitaljs.view_isactive && resourceExtname =~ /^\\.sv$|^\\.v$|^\\.vh$|^\\.lua$/",
+                    "group": "navigation@99999"
+                },
+                {
+                    "command": "digitaljs.newViewSource",
+                    "when": "resourceExtname =~ /^\\.sv$|^\\.v$|^\\.vh$|^\\.lua$/",
+                    "group": "navigation@100000"
+                }
+            ],
+            "view/item/context": [
+                {
+                    "command": "digitaljs.removeSource",
+                    "when": "view == digitaljs-proj-files && viewItem != root-circuit",
+                    "group": "inline"
+                },
+                {
+                    "command": "digitaljs.startScript",
+                    "when": "view == digitaljs-proj-files && viewItem in digitaljs.script_not_running",
+                    "group": "inline"
+                },
+                {
+                    "command": "digitaljs.stopScript",
+                    "when": "view == digitaljs-proj-files && viewItem in digitaljs.script_running",
+                    "group": "inline"
+                }
+            ]
+        },
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "digitaljs-container",
+                    "title": "DigitalJS",
+                    "icon": "imgs/digitaljs_mono.svg"
+                }
+            ]
+        },
+        "views": {
+            "digitaljs-container": [
+                {
+                    "id": "digitaljs-proj-files",
+                    "name": "Files",
+                    "icon": "$(files)",
+                    "when": "digitaljs.view_isactive",
+                    "contextualTitle": "DigitalJS Files"
+                },
+                {
+                    "id": "digitaljs-proj-synth",
+                    "type": "webview",
+                    "name": "Synthesis",
+                    "icon": "$(gear)",
+                    "when": "digitaljs.view_isactive",
+                    "contextualTitle": "DigitalJS Synthesis"
+                },
+                {
+                    "id": "digitaljs-proj-status",
+                    "type": "webview",
+                    "name": "Control",
+                    "icon": "$(info)",
+                    "when": "digitaljs.view_isactive",
+                    "contextualTitle": "DigitalJS Control"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "npm-run-all compile:*",
+        "compile:views": "webpack --mode production",
+        "watch": "npm-run-all watch:*",
+        "watch:webpack": "webpack --watch --mode development",
+        "watch-prod": "npm-run-all watch-prod:*",
+        "watch-prod:webpack": "webpack --watch --mode production",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "node ./test/runTest.js",
+        "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. ."
+    },
+    "devDependencies": {
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.0",
+        "@types/node": "17.x",
+        "@types/vscode": "^1.62.0",
+        "@vscode/test-electron": "^2.1.3",
+        "@vscode/test-web": "^0.0.24",
+        "css-loader": "^6.7.1",
+        "eslint": "^8.12.0",
+        "expose-loader": "^3.1.0",
+        "glob": "^7.2.0",
+        "jquery": "^3.6.0",
+        "mocha": "^9.2.2",
+        "node-sass": "^7.0.1",
+        "npm-run-all": "^4.1.5",
+        "ovsx": "^0.3.0",
+        "process": "^0.11.10",
+        "sass-loader": "^12.6.0",
+        "style-loader": "^3.3.1",
+        "typescript": "^4.6.3",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2"
+    },
+    "dependencies": {
+        "@vscode/codicons": "^0.0.29",
+        "@vscode/webview-ui-toolkit": "^0.9.3",
+        "3vl": "^1.0.0",
+        "assert": "^2.0.0",
+        "backbone": "^1.4.1",
+        "base64-arraybuffer": "^1.0.2",
+        "crypto-browserify": "^3.12.0",
+        "digitaljs": "github:jamesmok102/digitaljs_mok",
+        "digitaljs_lua": "github:yuyichao/digitaljs_lua#dev",
+        "hammerjs": "^2.0.8",
+        "lodash": "^4.17.21",
+        "luaparse": "^0.3.1",
+        "path-browserify": "^1.0.1",
+        "resize-observer-polyfill": "^1.5.1",
+        "split-grid": "^1.0.11",
+        "stream-browserify": "^3.0.0",
+        "svg-pan-zoom": "github:yuyichao/svg-pan-zoom",
+        "util": "^0.12.4",
+        "wavecanvas": "^1.1.0",
+        "yosys2digitaljs": "^0.6.0",
+        "yosysjs": "github:yuyichao/yosysjs"
+    }
+}
